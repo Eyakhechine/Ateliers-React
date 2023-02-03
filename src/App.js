@@ -3,19 +3,20 @@ import './App.css';
 
 import {findLongestWord} from './Ecmascript.js'
 import {countArraysElements} from './Ecmascript.js'
-
+import {calculateMarks} from './Ecmascript.js'
+import { push } from './Ecmascript.js';
 
 
 function App() {
 
 //declaration 
 
- let tab =['eya','eyaa'];
+ let tableau =['eya','eyaa'];
 
  //question 1
- //console.log(findLongestWord(['eya','eyaa']));
+ console.log(findLongestWord(tableau));
 
-// question 2
+
 // declaration
 const input = [
  ["a", "b", "c"],
@@ -23,8 +24,29 @@ const input = [
  ["d", "f", "g"],
 ];
 
+// question 2
+//console.log(countArraysElements(input));
 
-console.log(countArraysElements(input));
+
+
+let students = [{ name: 'John', id: 123, marks: 98 },
+{ name: 'Baba', id: 101, marks: 23 },
+{ name: 'John', id: 200, marks: 45 },
+{ name: 'Wick', id: 115, marks: 75 },];
+
+// question 3
+//console.log(calculateMarks(students));
+
+  let tab=[{name :'eya' , fonction : "etudiant"},
+  {name :'eya2' , fonction : "etudiant1"},
+  {name :'eya3' , fonction :"etudiant2 "},];
+
+
+  //question 4
+  console.log(push(tab));
+
+
+
 
   return (
     <div className="App">
