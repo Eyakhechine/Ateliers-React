@@ -1,16 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
 
+import {findLongestWord} from './Ecmascript.js'
 
-
-const num =90;
-const person ={
-
-  nom:"eya",
-  prenom:"khechine",}
 
 
 function App() {
+
+//declaration 
+
+ let tab =['eya','eyaa'];
+
+ //question 1
+ console.log(findLongestWord(['eya','eyaa']));
+
+
+
+
   return (
     <div className="App">
       <header className="App-header">
@@ -18,8 +24,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <p> {num}</p>
-        <p> {nom} {prenom}</p>
+     
         <a
           className="App-link"
           href="https://reactjs.org"
