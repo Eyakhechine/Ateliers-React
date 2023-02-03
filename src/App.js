@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 
 import {findLongestWord} from './Ecmascript.js'
+import {countArraysElements} from './Ecmascript.js'
 
 
 
@@ -12,10 +13,18 @@ function App() {
  let tab =['eya','eyaa'];
 
  //question 1
- console.log(findLongestWord(['eya','eyaa']));
+ //console.log(findLongestWord(['eya','eyaa']));
+
+// question 2
+// declaration
+const input = [
+ ["a", "b", "c"],
+ ["c", "d", "f"],
+ ["d", "f", "g"],
+];
 
 
-
+console.log(countArraysElements(input));
 
   return (
     <div className="App">
