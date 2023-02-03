@@ -2,8 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 
 import {findLongestWord} from './Ecmascript.js'
-import {countArraysElements} from './Ecmascript.js'
-import {calculateMarks} from './Ecmascript.js'
+import {calculOccurence} from './Ecmascript.js'
+import {calculNotes} from './Ecmascript.js'
 import { push } from './Ecmascript.js';
 
 
@@ -25,7 +25,7 @@ const input = [
 ];
 
 // question 2
-//console.log(countArraysElements(input));
+//console.log(calculOccurence(input));
 
 
 
@@ -35,7 +35,7 @@ let students = [{ name: 'John', id: 123, marks: 98 },
 { name: 'Wick', id: 115, marks: 75 },];
 
 // question 3
-//console.log(calculateMarks(students));
+//console.log(calculNotes(students));
 
   let tab=[{name :'eya' , fonction : "etudiant"},
   {name :'eya2' , fonction : "etudiant1"},

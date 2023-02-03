@@ -8,7 +8,7 @@ const input = [
  ["d", "f", "g"],
 ];
 //ques2
-export const countArraysElements = (input) =>
+export const calculOccurence = (input) =>
 input.flat().reduce((accumulator, currentValue) => {
 
  if (accumulator[currentValue]) {
@@ -22,7 +22,7 @@ console.log(currentValue)
  }, {});
 //ques3
 
- export const calculateMarks = (students) =>
+ export const calculNotes = (students) =>
  students.map((stu) => {
   if (stu.marks < 50) {
   stu.marks += 15;
