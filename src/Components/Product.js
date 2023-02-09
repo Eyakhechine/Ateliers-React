@@ -26,12 +26,13 @@ return (
       src={require("../assets/images/" + this.state.produit.img)}
     />
     <Card.Body>
-      <Card.Title> {this.state.produit.name}</Card.Title>
-      <Card.Title> {this.state.produit.price}</Card.Title>
+      <Card.Text> {this.state.produit.name}</Card.Text>
+      <Card.Text> {this.state.produit.price}</Card.Text>
       <Card.Text>{this.state.produit.description}</Card.Text>
       <Card.Text>{this.state.produit.quantity}</Card.Text>
       <Card.Text>{this.state.produit.like}</Card.Text>
       <Button variant="primary">Like</Button>
+      <Button variant="secondary">buy</Button>
     </Card.Body>
   </Card>
 );
