@@ -20,15 +20,18 @@ render (){
 
 
 return (
-  <Card style={{ width: "18rem" }}>
-    <Card.Img variant="top" src={require('../assets/images/'+this.state.produit.img)} />
+  <Card style={{ width: "20em" }}>
+    <Card.Img
+      variant="top"
+      src={require("../assets/images/" + this.state.produit.img)}
+    />
     <Card.Body>
-      <Card.Title>Card Title</Card.Title>
-      <Card.Text>
-        Some quick example text to build on the card title and make up the bulk
-        of the card's content.
-      </Card.Text>
-      <Button variant="primary">Go somewhere</Button>
+      <Card.Title> {this.state.produit.name}</Card.Title>
+      <Card.Title> {this.state.produit.price}</Card.Title>
+      <Card.Text>{this.state.produit.description}</Card.Text>
+      <Card.Text>{this.state.produit.quantity}</Card.Text>
+      <Card.Text>{this.state.produit.like}</Card.Text>
+      <Button variant="primary">Like</Button>
     </Card.Body>
   </Card>
 );
