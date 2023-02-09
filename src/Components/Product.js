@@ -11,8 +11,8 @@ import products from "../products.json";
 export default class Product extends Component{
 
 constructor(props) {
-    this(props);
-    this.state = props;
+  super(props)
+    this.state = { ...props };
 
 
 }
