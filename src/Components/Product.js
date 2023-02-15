@@ -46,8 +46,8 @@ export default class Product extends Component {
             Like
           </Button>
          <Button
-                  variant="primary"
-                //  disabled={this.state.product.quantity}
+                  variant="info"
+                disabled={!this.state.produit.quantity}
                   onClick={this.buy}
                 >
                   Buy
