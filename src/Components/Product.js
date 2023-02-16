@@ -3,6 +3,7 @@
 import React,{Component} from 'react';
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import { Stack } from "react-bootstrap";
 
 
 
@@ -42,6 +43,7 @@ export default class Product extends Component {
           <Card.Text>{this.state.produit.description}</Card.Text>
           <Card.Text>{this.state.produit.quantity}</Card.Text>
           <Card.Text>{this.state.produit.like}</Card.Text>
+     
           <Button variant="primary" onClick={this.like}>
             Like
           </Button>

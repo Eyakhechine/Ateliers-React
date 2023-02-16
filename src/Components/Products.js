@@ -27,9 +27,15 @@ export default class Products extends Component {
           </p>
         </Alert>
         <>
-          {products.map((product, index) => (
-            <Product produit={product} key={index}></Product>
-          ))}
+          <Row>
+            {" "}
+            {products.map((product, index) => (
+              <Col>
+                {" "}
+                <Product produit={product} key={index}></Product>{" "}
+              </Col>
+            ))}
+          </Row>
         </>
       </Container>
     );
