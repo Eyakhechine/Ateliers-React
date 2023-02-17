@@ -1,62 +1,65 @@
-
-
-import React,{Component} from 'react';
+import React, { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import { Stack } from "react-bootstrap";
 
+import "./Product.css";
 
+export default function Product(props) {
+  const [product, setProduct] = useState(props.product);
+  const [updated, setUpdated] = useState(0);
 
+  const addlike = () => {
+    setProduct({
+      ...product,
+      like: Number(product.like) + 1,
+    });
+    setUpdated((u) => u + 1);
+  };
 
+  useEffect(() => {
+    console.log(updated);
+  }, [updated]);
 
-export default class Product extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { ...props};
-  }
-
-  like = (e) => {
+  return (
     
-    e.preventDefault();
-    this.setState((oldState) => ({
-      produit: { ...oldState.produit, like: oldState.produit.like + 1 },
-    }));
-  };
+    
+    
+   product.like >= 5 ? (
+    <Card style={{ width: "20em" }} class="bestProduct">
+      <Card.Img
+        variant="top"
+        src={require("../assets/images/" + props.product.img)}
+      />
+      <Card.Body>
+        <Card.Text> {props.product.name}</Card.Text>
+        <Card.Text> {props.product.price}</Card.Text>
+        <Card.Text>{props.product.description}</Card.Text>
+        <Card.Text>{props.product.quantity}</Card.Text>
+        <Card.Text> likes :{product.like}</Card.Text>
 
-  buy = (e) => {
-    e.preventDefault();
-    this.setState((oldState) => ({
-      produit: { ...oldState.produit, quantity: oldState.produit.quantity - 1 },
-    }));
-   // this.props.alertstate(true);
-  };
+        <Button variant="primary" onClick={addlike}>
+          Like
+        </Button>
+      </Card.Body>
+    </Card>
+  ) : (
+    <Card style={{ width: "20em" }}>
+      <Card.Img
+        variant="top"
+        src={require("../assets/images/" + props.product.img)}
+      />
+      <Card.Body>
+        <Card.Text> {props.product.name}</Card.Text>
+        <Card.Text> {props.product.price}</Card.Text>
+        <Card.Text>{props.product.description}</Card.Text>
+        <Card.Text>{props.product.quantity}</Card.Text>
+        <Card.Text>like :{product.like}</Card.Text>
 
-  render() {
-    return (
-      <Card style={{ width: "20em" }}>
-        <Card.Img
-          variant="top"
-          src={require("../assets/images/" + this.state.produit.img)}
-        />
-        <Card.Body>
-          <Card.Text> {this.state.produit.name}</Card.Text>
-          <Card.Text> {this.state.produit.price}</Card.Text>
-          <Card.Text>{this.state.produit.description}</Card.Text>
-          <Card.Text>{this.state.produit.quantity}</Card.Text>
-          <Card.Text>{this.state.produit.like}</Card.Text>
+        <Button variant="primary" onClick={addlike}>
+          Like
+        </Button>
      
-          <Button variant="primary" onClick={this.like}>
-            Like
-          </Button>
-         <Button
-                  variant="info"
-                disabled={!this.state.produit.quantity}
-                  onClick={this.buy}
-                >
-                  Buy
-                </Button>
-        </Card.Body>
-      </Card>
-    );
-  }
+      </Card.Body>
+    </Card>)
+  );
 }
