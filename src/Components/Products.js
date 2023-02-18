@@ -2,42 +2,44 @@ import Product from "./Product";
 import React, { Component } from "react";
 import products from "../products.json";
 import { Alert, Col, Container, Row } from "react-bootstrap";
+import { useEffect, useState } from "react";
 
-export default class Products extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { ...props, alertbienvenue: true };
+export default function Products(props) {
+  const [product, setProduct] = useState(props.product);
+  const [updated, setUpdated] = useState(0);
 
-    setTimeout(() => {
-      this.setState({ alertbienvenue: false });
-    }, 3000);
-  }
+const [alertbienvenue] = useState(0);
 
-  render() {
-    return (
-      <Container>
-        {" "}
-        {this.state.alertbienvenue && (
-          <Alert variant="success">
-            <Alert.Heading>Hey, Welcome to Our shop MYSTORE</Alert.Heading>
-            <p>
-              thank you for choossing out store ,we hope you enjoy your shopping
-              experience
-            </p>
-          </Alert>
-        )}
-        <>
-          <Row>
-            {" "}
-            {products.map((product, index) => (
-              <Col>
-                {" "}
-                <Product product={product} key={index}></Product>{" "}
-              </Col>
-            ))}
-          </Row>
-        </>
-      </Container>
-    );
-  }
+ 
+  setTimeout(() => {
+    props.setState({ alertbienvenue: false });
+  }, 3000);
+
+
+  return (
+    <Container>
+      {" "}
+      
+      {props.alertbienvenue && (
+        <Alert variant="success">
+          <Alert.Heading>Hey, Welcome to Our shop MYSTORE</Alert.Heading>
+          <p>
+            thank you for choossing out store ,we hope you enjoy your shopping
+            experience
+          </p>
+        </Alert>
+      )}
+      <>
+        <Row>
+          {" "}
+          {products.map((product, index) => (
+            <Col>
+              {" "}
+              <Product product={product} key={index}></Product>{" "}
+            </Col>
+          ))}
+        </Row>
+      </>
+    </Container>
+  );
 }
