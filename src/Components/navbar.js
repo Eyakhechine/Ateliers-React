@@ -17,7 +17,8 @@ export default function NavigationBar() {
            <Navbar.Brand href="#home">MyStore</Navbar.Brand>
            <Nav className="me-auto">
       
-             <Nav.Link href="products">Products</Nav.Link>
+             <Nav.Link  style={({ isActive }) => ({
+    color: isActive ? '#fff' : '#545e6f'})} href="products">Products</Nav.Link>
            </Nav>
          </Container>
        </Navbar>
