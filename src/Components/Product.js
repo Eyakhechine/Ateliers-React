@@ -20,18 +20,16 @@ export default function Product(props) {
     console.log(updated);
   }, [updated]);
 
-  return (
-    
-    
-    
-   product.like >= 5 ? (
+  return product.like >= 5 ? (
     <Card style={{ width: "20em" }} class="bestProduct">
       <Card.Img
         variant="top"
         src={require("../assets/images/" + props.product.img)}
       />
       <Card.Body>
-        <Card.Text> {props.product.name}</Card.Text>
+        <Card.Text>
+          <a href={ props.product.name}>{props.product.name}</a>
+        </Card.Text>
         <Card.Text> {props.product.price}</Card.Text>
         <Card.Text>{props.product.description}</Card.Text>
         <Card.Text>{props.product.quantity}</Card.Text>
@@ -49,17 +47,18 @@ export default function Product(props) {
         src={require("../assets/images/" + props.product.img)}
       />
       <Card.Body>
-        <Card.Text> {props.product.name}</Card.Text>
+        <Card.Text>
+          <a href={ props.product.name}>{props.product.name}</a>
+        </Card.Text>
         <Card.Text> {props.product.price}</Card.Text>
         <Card.Text>{props.product.description}</Card.Text>
         <Card.Text>{props.product.quantity}</Card.Text>
-        <Card.Text>like :{product.like}</Card.Text>
+        <Card.Text>likes :{product.like}</Card.Text>
 
         <Button variant="primary" onClick={addlike}>
           Like
         </Button>
-     
       </Card.Body>
-    </Card>)
+    </Card>
   );
 }
