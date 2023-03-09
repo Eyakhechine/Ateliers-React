@@ -87,6 +87,9 @@ export default function UpdateProduct(props) {
             value={Product.quantity}
             onChange={(e) => handleChange(e)}
           />
+
+
+          
         </Form.Group>
         <Form.Group className="mb-3">
           <Form.Label>Image</Form.Label>
