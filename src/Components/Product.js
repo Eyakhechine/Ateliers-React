@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-
+import { useNavigate } from "react-router-dom";
 import "./Product.css";
+import { Link } from "react-router-dom";
+import { deleteProduct } from "../service/api";
 
 export default function Product(props) {
   const [product, setProduct] = useState(props.product);
   const [updated, setUpdated] = useState(0);
-
+const navigate = useNavigate();
   const addlike = () => {
     setProduct({
       ...product,
@@ -15,7 +17,10 @@ export default function Product(props) {
     });
     setUpdated((u) => u + 1);
   };
-
+   const deletep = (e) => {
+     e.preventDefault();
+     deleteProduct(product.id).then(() => navigate("/products"));
+   };
   useEffect(() => {
     console.log(updated);
   }, [updated]);
@@ -28,7 +33,7 @@ export default function Product(props) {
       />
       <Card.Body>
         <Card.Text>
-          <a href={ props.product.name}>{props.product.name}</a>
+          <a href={props.product.name}>{props.product.name}</a>
         </Card.Text>
         <Card.Text> {props.product.price}</Card.Text>
         <Card.Text>{props.product.description}</Card.Text>
@@ -48,7 +53,7 @@ export default function Product(props) {
       />
       <Card.Body>
         <Card.Text>
-          <a href={ props.product.name}>{props.product.name}</a>
+          <a href={props.product.name}>{props.product.name}</a>
         </Card.Text>
         <Card.Text> {props.product.price}</Card.Text>
         <Card.Text>{props.product.description}</Card.Text>
@@ -58,6 +63,12 @@ export default function Product(props) {
         <Button variant="primary" onClick={addlike}>
           Like
         </Button>
+        <Button variant="danger" onClick={deletep}>
+          delete
+        </Button>
+        <Link to={`/products/edit/${product.id}`}>
+          <Button variant="success">Edit Product</Button>
+        </Link>
       </Card.Body>
     </Card>
   );

@@ -11,7 +11,7 @@
     },
     {
       "id": 2,
-      "name": "Mouse",
+      "name": "mouse",
       "price": "30",
       "img": "product2.jpg",
       "like": 0,
@@ -19,16 +19,7 @@
       "description": "Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page"
     },
     {
-      "name": "éé",
-      "price": "3",
-      "img": "product3.jpg",
-      "like": 0,
-      "quantity": "54",
-      "description": "éé",
-      "id": 3
-    },
-    {
-      "name": "aaaa",
+      "name": "keyboard",
       "price": "2",
       "img": "product3.jpg",
       "like": 0,
@@ -44,6 +35,15 @@
       "quantity": "544",
       "description": "dd",
       "id": 5
+    },
+    {
+      "name": "aa",
+      "price": "20022",
+      "img": "product1.webp",
+      "like": 0,
+      "quantity": "20222",
+      "description": "eyaa",
+      "id": 6
     }
   ]
 }
