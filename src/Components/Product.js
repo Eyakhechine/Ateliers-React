@@ -33,7 +33,7 @@ const navigate = useNavigate();
       />
       <Card.Body>
         <Card.Text>
-          <a href={props.product.name}>{props.product.name}</a>
+          <a href={props.product.id}>{props.product.name}</a>
         </Card.Text>
         <Card.Text> {props.product.price}</Card.Text>
         <Card.Text>{props.product.description}</Card.Text>
@@ -53,7 +53,7 @@ const navigate = useNavigate();
       />
       <Card.Body>
         <Card.Text>
-          <a href={props.product.name}>{props.product.name}</a>
+          <a href={props.product.id}>{props.product.name}</a>
         </Card.Text>
         <Card.Text> {props.product.price}</Card.Text>
         <Card.Text>{props.product.description}</Card.Text>

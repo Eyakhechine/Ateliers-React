@@ -22,7 +22,7 @@ function App() {
       <Suspense fallback={<p>chargement...</p>}>
         <Routes>
           <Route path="/products" element={<Products />}></Route>
-          <Route path="/:name" element={<Productdetails />}></Route>
+          <Route path="/:id" element={<Productdetails />}></Route>
           <Route path="/products/add" element={<AddProduct />}></Route>
           <Route path="/products/edit/:id" element={<UpdateProduct/>}></Route>
           <Route path="*" element={<Notfound />}></Route>

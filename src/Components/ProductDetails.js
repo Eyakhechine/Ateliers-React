@@ -1,12 +1,24 @@
-import React from 'react'
-import products from "../products.json";
+import React, { useState, useEffect } from "react";
+import products from "../db.json";
 import Product from "./Product";
 import Button from "react-bootstrap/Button";
 import { useParams } from "react-router-dom";
 import Card from "react-bootstrap/Card";
+import {getallProducts,} from "../service/api";
 export default function ProductDetails(props) {
-    const {name} =useParams();
-    const productfound=products.filter((product) =>product.name === name)[0];
+  const { id } = useParams();
+
+  const [productfound, setProductfound] = useState(props.productfound);
+
+
+  useEffect(() => {
+    loadProductData();
+  }, []);
+
+  const loadProductData = async () => {
+    const response = await getallProducts(id);
+    setProductfound(response.data);
+  };
   return (
     <>
       {productfound ? (
