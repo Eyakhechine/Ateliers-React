@@ -23,6 +23,8 @@ export default function UpdateProduct(props) {
     quantity: "",
     description: "",
   });
+
+    
   useEffect(() => {
     loadProductData();
   }, []);
@@ -53,7 +55,7 @@ export default function UpdateProduct(props) {
           <Form.Control
             as="textarea"
             type="text"
-         
+            value={Product.name}
             name="name"
             onChange={(e) => handleChange(e)}
           />
@@ -63,7 +65,7 @@ export default function UpdateProduct(props) {
           <Form.Label>Description</Form.Label>
           <Form.Control
             type="text"
-          
+            value={Product.description}
             name="description"
             onChange={(e) => handleChange(e)}
           />
@@ -73,7 +75,7 @@ export default function UpdateProduct(props) {
           <Form.Control
             type="number"
             name="price"
-     
+            value={Product.price}
             onChange={(e) => handleChange(e)}
           />
         </Form.Group>
@@ -82,7 +84,7 @@ export default function UpdateProduct(props) {
           <Form.Control
             type="number"
             name="quantity"
-         
+            value={Product.quantity}
             onChange={(e) => handleChange(e)}
           />
         </Form.Group>
@@ -91,7 +93,6 @@ export default function UpdateProduct(props) {
           <Form.Control
             type="file"
             name="img"
-   
             onChange={(e) => handleChangeFile(e)}
           />
         </Form.Group>
