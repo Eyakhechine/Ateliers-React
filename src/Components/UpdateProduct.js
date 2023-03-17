@@ -5,6 +5,9 @@ import Form from "react-bootstrap/Form";
 import { Container } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
+//redux
+import { updateProductReducer } from "../ReduxToolkit/slices/productSlice";
+import { useDispatch } from "react-redux";
 import {
   addProduct,
   editProduct,
@@ -14,7 +17,7 @@ import {
 
 export default function UpdateProduct(props) {
   const { id } = useParams();
-
+  const dispatch = useDispatch();
   const [Product, setProduct] = useState({
     name: "",
     price: "",
@@ -43,7 +46,9 @@ export default function UpdateProduct(props) {
   };
   const edit = (e) => {
     e.preventDefault();
-    editProduct(id, Product).then(() => navigate("/products"));
+    editProduct(id, Product).then(() => {
+       dispatch(updateProductReducer(Product));
+      navigate("/products")});
   };
 
   return (
