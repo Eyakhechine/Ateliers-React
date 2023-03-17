@@ -1,55 +1,40 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from 'react';
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
-import { Container } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
-import { useParams } from "react-router-dom";
-import {
-  addProduct,
-  editProduct,
-  deleteProduct,
-  getallProducts,
-} from "../service/api";
+import { Container } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
+import { addProduct } from '../service/api';
+export default function AddProduct() {
 
-export default function UpdateProduct(props) {
-  const { id } = useParams();
+const [Product,setProduct]=useState({
 
-  const [Product, setProduct] = useState({
-    name: "",
-    price: "",
-    img: "",
-    like: "",
-    quantity: "",
-    description: "",
-  });
+      "name": "",
+      "price": "",
+      "img": "",
+      "like": 0,
+      "quantity": 0,
+      "description": "",
 
-<<<<<<< Updated upstream
-=======
-    
->>>>>>> Stashed changes
-  useEffect(() => {
-    loadProductData();
-  }, []);
+    })
+    const add = (e) => {
+        e.preventDefault();
+addProduct(Product).then(() => navigate("/products") );
 
-  const loadProductData = async () => {
-    const response = await getallProducts(id);
-    setProduct(response.data);
-  };
-  const navigate = useNavigate();
-  const handleChange = (e) => {
-    setProduct({ ...Product, [e.target.name]: e.target.value });
-    console.log(Product);
-  };
-  const handleChangeFile = (e) => {
-    setProduct({ ...Product, img: e.target.files[0].name });
-    console.log(Product);
-  };
-  const edit = (e) => {
-    e.preventDefault();
-    editProduct(id, Product).then(() => navigate("/products"));
-  };
+    }
+const navigate=useNavigate();
+const handleChange=(e) => {
 
+setProduct({...Product,[e.target.name]:e.target.value})
+console.log(Product);
+
+ }
+
+     const handleChangeFile = (e) => {
+   
+setProduct({ ...Product,img:e.target.files[0].name });
+       console.log(Product);
+     };
   return (
     <Container style={{ marginTop: "30px" }}>
       <Form>
@@ -58,7 +43,7 @@ export default function UpdateProduct(props) {
           <Form.Control
             as="textarea"
             type="text"
-            value={Product.name}
+            placeholder="Enter the name"
             name="name"
             onChange={(e) => handleChange(e)}
           />
@@ -68,7 +53,7 @@ export default function UpdateProduct(props) {
           <Form.Label>Description</Form.Label>
           <Form.Control
             type="text"
-            value={Product.description}
+            placeholder="Enter the product description"
             name="description"
             onChange={(e) => handleChange(e)}
           />
@@ -78,7 +63,6 @@ export default function UpdateProduct(props) {
           <Form.Control
             type="number"
             name="price"
-            value={Product.price}
             onChange={(e) => handleChange(e)}
           />
         </Form.Group>
@@ -87,15 +71,8 @@ export default function UpdateProduct(props) {
           <Form.Control
             type="number"
             name="quantity"
-            value={Product.quantity}
             onChange={(e) => handleChange(e)}
           />
-<<<<<<< Updated upstream
-=======
-
-
-          
->>>>>>> Stashed changes
         </Form.Group>
         <Form.Group className="mb-3">
           <Form.Label>Image</Form.Label>
@@ -105,8 +82,8 @@ export default function UpdateProduct(props) {
             onChange={(e) => handleChangeFile(e)}
           />
         </Form.Group>
-        <Button variant="primary" type="submit" onClick={edit}>
-          update Product
+        <Button variant="primary" type="submit" onClick={add}>
+          Add Product
         </Button>
         <Button variant="gray" type="reset">
           Save

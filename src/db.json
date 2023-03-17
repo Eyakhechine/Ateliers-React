@@ -19,12 +19,21 @@
       "id": 2
     },
     {
+<<<<<<< Updated upstream
       "name": "pc",
       "price": "200",
       "img": "product1.webp",
       "like": 0,
       "quantity": "200",
       "description": "pc",
+=======
+      "name": "mouse",
+      "price": "111",
+      "img": "product2.jpg",
+      "like": 0,
+      "quantity": "11",
+      "description": "mousee",
+>>>>>>> Stashed changes
       "id": 3
     }
   ]
