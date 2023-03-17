@@ -1,12 +1,16 @@
 import React from 'react'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
+import Card from "react-bootstrap/Card";
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { NavLink} from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selectCountAll } from "../ReduxToolkit/slices/cartSlice";
+import img from "../assets/images/cart.png";
 export default function NavigationBar() {
 
-
+const CartNumber = useSelector(selectCountAll);
 
  
    return (
@@ -34,6 +38,10 @@ export default function NavigationBar() {
                })}
              >
                AddProduct
+             </Nav.Link>
+             <Nav.Link as={NavLink} to="/cart">
+                  <Card.Img sizes={10} src={img} />
+               Panier {CartNumber}
              </Nav.Link>
            </Nav>
          </Container>
