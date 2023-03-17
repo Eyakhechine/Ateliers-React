@@ -5,6 +5,9 @@ import Form from "react-bootstrap/Form";
 import { Container } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { addProduct } from '../service/api';
+//redux
+import { addProductReducer } from "../ReduxToolkit/slices/productSlice";
+import { useDispatch } from "react-redux";
 export default function AddProduct() {
 
 const [Product,setProduct]=useState({
@@ -17,10 +20,13 @@ const [Product,setProduct]=useState({
       "description": "",
 
     })
+      const dispatch = useDispatch();
     const add = (e) => {
         e.preventDefault();
-addProduct(Product).then(() => navigate("/products") );
-
+addProduct(Product).then(() =>{
+dispatch(addProductReducer(Product));
+navigate("/products") });
+   
     }
 const navigate=useNavigate();
 const handleChange=(e) => {
