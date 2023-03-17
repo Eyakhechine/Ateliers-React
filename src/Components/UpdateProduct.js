@@ -24,10 +24,6 @@ export default function UpdateProduct(props) {
     description: "",
   });
 
-<<<<<<< Updated upstream
-=======
-    
->>>>>>> Stashed changes
   useEffect(() => {
     loadProductData();
   }, []);
@@ -90,12 +86,6 @@ export default function UpdateProduct(props) {
             value={Product.quantity}
             onChange={(e) => handleChange(e)}
           />
-<<<<<<< Updated upstream
-=======
-
-
-          
->>>>>>> Stashed changes
         </Form.Group>
         <Form.Group className="mb-3">
           <Form.Label>Image</Form.Label>
