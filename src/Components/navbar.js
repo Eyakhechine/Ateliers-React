@@ -40,7 +40,7 @@ const CartNumber = useSelector(selectCountAll);
                AddProduct
              </Nav.Link>
              <Nav.Link as={NavLink} to="/cart">
-                  <Card.Img sizes={10} src={img} />
+                  <img src={img} />
                Panier {CartNumber}
              </Nav.Link>
            </Nav>

@@ -16,6 +16,7 @@ const Products = React.lazy(() => import("./Components/Products"));
 const Productdetails = React.lazy(() => import("./Components/ProductDetails"));
 const AddProduct = React.lazy(() => import("./Components/AddProduct"));
 const UpdateProduct = React.lazy(() => import("./Components/UpdateProduct"));
+const Cart = React.lazy(() => import("./Components/Cart"));
 const Notfound = React.lazy(() => import("./Components/Notfound"));
 
 function App() {
@@ -31,11 +32,11 @@ function App() {
           <Route path="/:id" element={<Productdetails />}></Route>
           <Route path="/products/add" element={<AddProduct />}></Route>
           <Route path="/products/edit/:id" element={<UpdateProduct />}></Route>
+          <Route path="/cart" element={<Cart/>}></Route>
           <Route path="*" element={<Notfound />}></Route>
         </Routes>
       </Suspense>
     </div>
-   
   );
 }
 
