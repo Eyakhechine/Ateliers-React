@@ -11,7 +11,7 @@
     },
     {
       "name": "eya",
-      "price": "",
+      "price": "500",
       "img": "product3.jpg",
       "like": 0,
       "quantity": "222",
@@ -29,10 +29,10 @@
     },
     {
       "name": "aa",
-      "price": "20",
+      "price": "200",
       "img": "product2.jpg",
       "like": 0,
-      "quantity": "0",
+      "quantity": "15",
       "description": "aaa",
       "id": 4
     }

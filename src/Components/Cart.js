@@ -51,13 +51,10 @@ export default function Cart(props) {
                               X
                             </Button>
                           </td>
-                          <td>{item.title}</td>
+                          <td>{item.name}</td>
                           <td>
                             <img
-                              src={
-                                process.env.REACT_APP_API_URL_UPLOADS +
-                                "/" +
-                                item.image
+                              src={ item.img
                               }
                               style={{ width: "80px", height: "80px" }}
                             />
